@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOID LOGIN</title>
+
+<style>
+
+body{
+    margin:0;
+    background:black;
+    font-family:monospace;
+    color:#00ff88;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+    overflow:hidden;
+}
+
+/* FRAME HP */
+
+.phone{
+
+    width:360px;
+    height:740px;
+
+    background:#050505;
+
+    border:8px solid #111;
+    border-radius:35px;
+
+    box-shadow:
+    0 0 30px #00ff88,
+    inset 0 0 20px #001a11;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* NOTCH */
+
+.notch{
+    width:160px;
+    height:25px;
+
+    background:#111;
+
+    position:absolute;
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+
+    z-index:10;
+}
+
+/* EFEK SCAN */
+
+.scan{
+    position:absolute;
+    width:100%;
+    height:2px;
+    background:#00ff88;
+
+    animation:scan 4s linear infinite;
+
+    box-shadow:0 0 10px #00ff88;
+}
+
+@keyframes scan{
+    0%{top:0;}
+    100%{top:100%;}
+}
+
+/* ISI */
+
+.content{
+    padding:80px 25px;
+}
+
+.title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:40px;
+    font-size:12px;
+}
+
+input{
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    background:black;
+
+    border:1px solid #00aa66;
+
+    color:#00ff88;
+
+    font-family:monospace;
+
+    box-sizing:border-box;
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:18px;
+
+    background:#001a11;
+
+    color:#00ff88;
+
+    border:1px solid #00ff88;
+
+    font-family:monospace;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#003322;
+}
+
+.console{
+
+    margin-top:25px;
+
+    height:220px;
+
+    overflow:auto;
+
+    border:1px solid #003322;
+
+    background:black;
+
+    padding:10px;
+
+    font-size:11px;
+
+    color:#00cc66;
+}
+
+.red{
+    color:red;
+}
+
+.small{
+    color:#666;
+}
+
+</style>
+</head>
+<body>
+
+<div class="phone">
+
+<div class="notch"></div>
+
+<div class="scan"></div>
+
+<div class="content">
+
+<div class="title">
+VOID DATABASE
+</div>
+
+<div class="subtitle">
+AUTHORIZED PERSONNEL ONLY
+</div>
+
+<input type="text" id="user" placeholder="admin">
+
+<input type="password" id="pass" placeholder="password">
+
+<button onclick="login()">
+LOGIN
+</button>
+
+<div class="console" id="console">
+
+> mobile database connected...<br>
+> security layer enabled...<br>
+> waiting authentication...
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function write(text,color=""){
+
+let box = document.getElementById("console");
+
+box.innerHTML += `<br><span class="${color}">${text}</span>`;
+
+box.scrollTop = box.scrollHeight;
+
+}
+
+function login(){
+
+let u = document.getElementById("user").value;
+
+write("> SELECT * FROM users WHERE username='"+u+"'");
+
+setTimeout(()=>{
+
+if(
+u.includes("'") ||
+u.includes("--") ||
+u.includes("OR")
+){
+
+write("> SQL anomaly detected","red");
+
+setTimeout(()=>{
+write("> intrusion attempt logged","red");
+},1000);
+
+setTimeout(()=>{
+write("> ACCESS DENIED","red");
+},2000);
+
+}else{
+
+write("> invalid credentials","red");
+
+}
+
+},800);
+
+}
+
+</script>
+
+<!-- https:// -->
+
+</body>
+</html>
