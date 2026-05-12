@@ -26,7 +26,7 @@ body{
 <h1>@harvesman</h1>
 
 <div class="post">
-<p>“Tidak semua paham Maksud dari Rot47”</p>
+<p>“Tidak semua orang paham, Maksud dari Rot47”</p>
 
 <p>
 9EEADi^^>2:?\D:8>2\@CA:?]G6C46=]2AA^2C49:G6]9E>=
