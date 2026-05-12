@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>@Hasver</title>
+
+<style>
+body{
+ background:black;
+ color:lime;
+ font-family:monospace;
+ text-align:center;
+ margin-top:100px;
+}
+
+.post{
+ border:1px solid lime;
+ padding:20px;
+ width:300px;
+ margin:auto;
+}
+</style>
+
+</head>
+<body>
+
+<h1>@Hasver</h1>
+
+<div class="post">
+<p>“Tidak semua lokasi ditulis dengan jelas.”</p>
+
+<p>
+`{@C2E:@? i `abnliabmk`
+</p>
+</div>
+
+</body>
+</html>
